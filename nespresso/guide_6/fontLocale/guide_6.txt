@@ -18,7 +18,7 @@ avec votre code promotionnel XXXXXX.
 Doux, équilibrés, fruités ou corsés,
 explorez nos cafés créateurs d'émotions !
 JE COMMANDE
-https://www.nespresso.com/fr/fr/order/capsules/original
+https://www.nespresso.com/fr/fr/offre-new-remise-pourcentage
 <!-- End of BLOCK 2 -->
 <!-- Start of BLOCK 3 -->
 PROFITEZ DE VOTRE OFFRE EN 3 ÉTAPES
@@ -32,12 +32,12 @@ PROFITEZ DE VOTRE OFFRE EN 3 ÉTAPES
 ORIGINAL
 Nous avons soigneusement sélectionné 5 de nos cafés Original devenus iconiques au fil des années : Volluto, Livanto, Roma, Arpeggio et Ristretto. Du plus doux au plus intense, explorez leurs arômes subtils.
 JE DÉCOUVRE
-https://www.nespresso.com/fr/fr/order/capsules/original
+https://www.nespresso.com/fr/fr/order/capsules/original?tab=Best-sellers
 
 VERTUO
 Du côté de la gamme Vertuo, nos clients les adorent : Voltesso, Altissio, Orafio, Arrondio et Dolce. Du ristretto au mug, ces capsules vous offrent des expériences de dégustation sous toutes les formes, avec un résultat en tasse inoubliable.
 JE DÉCOUVRE
-https://www.nespresso.com/fr/fr/order/capsules/vertuo
+https://www.nespresso.com/fr/fr/order/capsules/vertuo?tab=Best-sellers
 <!-- End of BLOCK 4 -->
 <!-- Start of APP -->
 Téléchargez l'application
@@ -60,7 +60,7 @@ Donnez une seconde vie à vos capsules !
 https://www.nespresso.com/agit/ou-deposer-vos-capsules/
 
 Découvrez l'abonnement café Nespresso
-https://www.nespresso.com/fr/fr/secure/login?destination-redirect=/fr/fr/myaccount/standing-orders#/orders/list/
+https://www.nespresso.com/fr/fr/abonnement-cafe
 
 Rejoignez-nous #Nespressomoments
 Facebook : https://www.facebook.com/Nespresso.FR
