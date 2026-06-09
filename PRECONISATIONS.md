@@ -107,14 +107,11 @@ changent. À industrialiser comme un gabarit unique :
    (`&eacute;`, `&agrave;`…). Ne jamais réenregistrer en UTF-8.
    ⚠️ `guide_2` contient déjà des accents bruts mal encodés (« Banni�re », « JE D�COUVRE ») —
    **à corriger en entités** et à ne pas reproduire.
-4. **[Préco] Compatibilité Outlook (MSO).** Conserver les conditionnels `<!--[if mso]>` (fallback
-   Arial), `mso-line-height-rule:exactly` sur les textes, hauteurs explicites sur les espaceurs.
-   Tester sous **ancien et nouveau Outlook** (les deux `.oft` du projet).
-5. **[Préco] Le double dossier `fontAbsolute` / `fontLocale`.** Voir `CLAUDE.md` : la **seule**
+4. **[Préco] Le double dossier `fontAbsolute` / `fontLocale`.** Voir `CLAUDE.md` : la **seule**
    différence légitime = l'URL des `@font-face` (CDN vs local). Tout le reste doit être **identique**.
    Maintenir les deux variantes synchronisées (harmoniser au passage l'écart `font-weight 900/800`
    présent sur `guide_1`).
-6. **[Préco] Images — respecter les tailles de `guide_2`.** Chemins relatifs `images/`,
+5. **[Préco] Images — respecter les tailles de `guide_2`.** Chemins relatifs `images/`,
    `display:block`, `border=0`, `width` en dur + `height:auto`, **`alt` renseigné systématiquement**.
    Tailles réelles relevées dans `guide_2` (à reproduire) :
 
@@ -131,7 +128,7 @@ changent. À industrialiser comme un gabarit unique :
    `guide_2`/`guide_1` plutôt qu'en les ré-exportant.
    ⚠️ Les photos extraites du PSD aplati sont en ~1x (≈646 px/email). Pour un rendu retina parfait,
    ré-exporter les photos depuis les calques du PSD ; les visuels actuels de `guide_6` sont en 1x.
-7. **[Préco] Fonds des blocs — attention.** Le beige `#f3eee6` ne s'applique **qu'aux blocs/cartes**
+6. **[Préco] Fonds des blocs — attention.** Le beige `#f3eee6` ne s'applique **qu'aux blocs/cartes**
    concernés, **jamais aux titres de section** ni aux espaceurs. Sur les cartes produit (moitié photo /
    moitié texte), mettre `bgcolor="#f3eee6"` **sur la cellule texte uniquement** ; photo et beige
    doivent avoir **la même hauteur**, sans débord beige au-dessus/en dessous. (Erreur classique :
@@ -139,27 +136,21 @@ changent. À industrialiser comme un gabarit unique :
    - **Tags « # XXX »** (ex. « # À LA UNE », « # BARISTA », « # MASTERCLASS BOUTIQUE ») : encart
      **fond blanc**, texte taupe `#8e8373`, **collé en haut à droite** du bloc (flush bord supérieur
      et droit, sans padding), comme le « # À LA UNE » de `guide_2`. Jamais du texte posé directement sur le fond.
-8. **[Préco] Couleurs de CTA — relever par email.** Ne pas présumer le brun : la couleur du bouton
+7. **[Préco] Couleurs de CTA — relever par email.** Ne pas présumer le brun : la couleur du bouton
    varie selon l'email (brun `#aa896a`, **noir `#000000`**, ou contour). Toujours vérifier sur la maquette.
-9. **[Préco] Retours à la ligne fidèles à la maquette.** Reproduire les coupures de lignes des textes
+8. **[Préco] Retours à la ligne fidèles à la maquette.** Reproduire les coupures de lignes des textes
    telles qu'elles apparaissent sur la maquette, avec `<br class="dn" />` (saut desktop, masqué en mobile).
    Respecter aussi les **paragraphes** (sauts de paragraphe via `<p>` espacés, pas `<br>`).
-10. **[Préco] Dates : « 1er » en exposant.** Toute occurrence de « 1er » dans une date doit utiliser
+9. **[Préco] Dates : « 1er » en exposant.** Toute occurrence de « 1er » dans une date doit utiliser
     la balise `<sup>` : `1<sup style="line-height: 0; font-size: 8px;">er</sup>` (ex. « hors 1ᵉʳ mai »).
-11. **[Préco] Footer variable par email.** Le bas de page change d'un email à l'autre : un email sans
+10. **[Préco] Footer variable par email.** Le bas de page change d'un email à l'autre : un email sans
     offre numérotée n'a **que** la note `*` (livraison) ; un email avec offre ajoute la/les note(s) `(1)`,
     `(2)`… **Vérifier le footer mot à mot sur la maquette pour chaque email.**
-8. **[Préco] Liens.** `target="_blank"`, URLs `nespresso.com` absolues. Vérifier les liens
+11. **[Préco] Liens.** `target="_blank"`, URLs `nespresso.com` absolues. Vérifier les liens
    spécifiques par offre (codes promo, pages produit Original/Vertuo/Pro).
-9. **[Préco] Responsive.** S'appuyer uniquement sur les classes mobiles existantes
+12. **[Préco] Responsive.** S'appuyer uniquement sur les classes mobiles existantes
    (`.w100p`, `.dn`, `.db`, `.wid_cen`, `.pt-30m`…). Ne pas introduire de nouvelles conventions.
-10. **[Préco] `.oft` Outlook.** Générés via Outlook (COM) en **embarquant les images en `cid:`**
-    (pièces jointes inline cachées), comme `guide_2.oft`. Produire `guide_N.oft` + `guide_N_new_outlook.oft`.
-    ⚠️ Outlook **supprime la balise `charset`** du corps → forcer le codepage du message
-    **`PR_INTERNET_CPID = 65001` (UTF‑8)** sinon l'ouverture auto-détecte un codepage CJK (**caractères chinois**).
-    Passer le **sujet en entités HTML** décodées dans PowerShell (les accents passés en argument bash→PS se corrompent).
-    **Tester que le rendu `.oft` est identique au HTML** dans l'ancien et le nouvel Outlook.
-11. **[Préco] Poids.** Viser < 100 Ko HTML et des images optimisées (Gmail tronque au-delà de ~102 Ko).
+13. **[Préco] Poids.** Viser < 100 Ko HTML et des images optimisées (Gmail tronque au-delà de ~102 Ko).
 
 ---
 
@@ -184,8 +175,7 @@ changent. À industrialiser comme un gabarit unique :
 6. Prévisualiser en local (WAMP) :
    `http://localhost/PRM_journees_Nespresso_mars/guide_N/fontLocale/guide_N.html`
 7. Synchroniser `fontAbsolute` (= idem + URLs CDN police).
-8. Générer/mettre à jour les `.oft` (ancien + nouvel Outlook).
-9. QA (§7) puis validation humaine.
+8. QA (§7) puis validation humaine.
 
 ---
 
@@ -198,7 +188,6 @@ changent. À industrialiser comme un gabarit unique :
 - [ ] Tous les `alt` renseignés ; toutes les images se chargent (local + CDN).
 - [ ] Tous les liens testés (`target="_blank"`, bonnes pages, codes promo).
 - [ ] Rendu OK : Outlook ancien + nouveau, Gmail, Apple Mail, mobile (≤ 480 px).
-- [ ] **Rendu `.oft` identique au HTML** (images embarquées visibles, mise en page conforme) — ancien + nouvel Outlook.
 - [ ] Tailles d'images conformes à `guide_2` (photos ~1x, logo/icônes 2x).
 - [ ] Fonds : titres de section sur blanc, beige limité aux cartes (pas de débord).
 - [ ] Offres : montants / codes / dates / mentions légales vérifiés.
