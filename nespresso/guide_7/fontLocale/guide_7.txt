@@ -8,8 +8,9 @@ https://www.nespresso.com/fr/fr
 #07
 Votre guide
 Nespresso
+<!-- End of BLOCK 1 -->
 <!-- Start of BLOCK 2 -->
-Dans chaque tasse ou mug de café Nespresso, il y a une histoire, un terroir et bientôt… des souvenirs, ceux de vos dégustations partagées. Chocolat, caramel, vanille, pistache… Découvrez mille façons de rendre votre café plus gourmand.
+Dans chaque tasse ou mug de café Nespresso, il y a une histoire, un terroir et bientôt... des souvenirs, ceux de vos dégustations partagées. Chocolat, caramel, vanille, pistache... Découvrez mille façons de rendre votre café plus gourmand.
 JE DÉCOUVRE
 https://www.nespresso.com/fr/fr/order/capsules/barista-creations
 <!-- End of BLOCK 2 -->
@@ -17,9 +18,9 @@ https://www.nespresso.com/fr/fr/order/capsules/barista-creations
 # BARISTA
 RÉINVENTEZ VOTRE TASSE DE CAFÉ AVEC NOS RECETTES EXCLUSIVES
 
-Évadez-vous avec les cafés gourmands Nespresso ! Inspirés par la créativité de nos meilleurs baristas, nos cafés Barista Creations ont été spécialement conçus pour préparer de délicieuses recettes de café.
+Évadez-vous avec les cafés gourmands Nespresso ! Inspirés par la créativité de nos meilleurs baristas, les cafés Barista Creations ont été spécialement conçus pour préparer de délicieuses recettes de café.
 JE DÉCOUVRE
-https://www.nespresso.com/fr/fr/order/capsules/barista-creations
+https://www.nespresso.com/fr/fr/order/capsules/original?tab=Gourmand
 <!-- End of BLOCK 3 -->
 <!-- Start of BLOCK 4 -->
 # MASTERCLASS BOUTIQUE
@@ -63,5 +64,5 @@ https://www.nespresso.com/agit/article/recyclage-capsules/nespresso-certifie-b-c
 <!-- Start of FOOTER -->
 Visuels non contractuels.
 Suggestion de présentation.
-* Livraison en click and collect offerte pour tout achat. Livraison en points de retrait offerte dès 20 € d'achat. Livraison à domicile en Colissimo offerte dès 40 € d'achat. Conditions valables en France métropolitaine, Corse et Monaco, sous réserve du statut fidélité applicable, pour toute commande sur le site www.nespresso.com/fr, depuis l’application mobile Nespresso ou par téléphone au 0 800 55 52 53 (service & appel gratuits disponibles du lundi au samedi de 8h à 20h, hors jours fériés).
+* Livraison en click and collect offerte pour tout achat. Livraison en points de retrait offerte dès 20 € d'achat. Livraison à domicile en Colissimo offerte dès 40 € d'achat. Conditions valables en France métropolitaine, Corse et Monaco, sous réserve du statut fidélité applicable, pour toute commande sur le site www.nespresso.com/fr, depuis l'application mobile Nespresso ou par téléphone au 0 800 55 52 53 (service & appel gratuits disponibles du lundi au samedi de 8h à 20h, hors jours fériés).
 <!-- End of FOOTER -->
