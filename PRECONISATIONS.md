@@ -128,6 +128,56 @@ changent. À industrialiser comme un gabarit unique :
    `guide_2`/`guide_1` plutôt qu'en les ré-exportant.
    ⚠️ Les photos extraites du PSD aplati sont en ~1x (≈646 px/email). Pour un rendu retina parfait,
    ré-exporter les photos depuis les calques du PSD ; les visuels actuels de `guide_6` sont en 1x.
+
+   #### Méthode fiable de récupération des images depuis le PSD (par calques)
+
+   > **[Préco] Ne PAS découper l'image aplatie « à l'œil » par coordonnées estimées** : cela laisse
+   > des liserés blancs (fond de la maquette capté sur les bords) et des cadrages irréguliers.
+   > **Se caler sur la géométrie exacte des calques.**
+
+   1. **Lister les calques** (index, taille, offset, nom) pour repérer les bornes exactes de chaque photo :
+      ```bash
+      magick identify -format "%p: %wx%h %g\n" "PRM_XXX.psd"
+      ```
+      Chaque photo visible correspond à un **calque-cadre** aux dimensions/position précises
+      (ex. cartes uniformes `292x170`, hero `646x250`). Il peut exister un second calque « photo »
+      légèrement plus grand (image sous masque) — se fier au **cadre visible**, pas au calque débordant.
+   2. **Générer le composite natif une seule fois** (⚠️ `-strip` obligatoire : sans lui, la sortie fait
+      >140 Mo à cause des métadonnées/miniatures embarquées) :
+      ```bash
+      magick "PRM_XXX.psd[0]" -flatten -strip -depth 8 full_native.png
+      ```
+   3. **Découper en INSETANT de 2–3 px** par rapport à la géométrie du calque (`-crop LxH+X+Y +repage`).
+      ⚠️ **Le bord du cadre est anti-aliasé et fond vers le blanc** du composite → un crop pile sur la
+      géométrie laisse un liseré clair de 1 px. On rentre donc de 2–3 px de chaque côté (perte invisible) :
+      ```bash
+      # calque hero 646x250+77+238  -> inset 3px
+      magick full_native.png -crop 640x244+80+241 +repage -quality 92 img_banner.jpg
+      # calque carte 292x170+93+1009 -> inset 3px
+      magick full_native.png -crop 286x164+96+1012 +repage -quality 92 img_en_boutique.jpg
+      ```
+   4. **Contrôle qualité** : poser chaque crop sur fond rouge zoomé ET vérifier la couleur des bords
+      (doit refléter la photo, PAS ~95–99 % de blanc) :
+      ```bash
+      magick img.jpg -bordercolor red -border 6 -filter point -resize 200% check.png
+      magick img.jpg -crop %[fx:w]x1+0+0 +repage -resize 1x1! -format '%[pixel:u]' info:   # couleur bord haut
+      ```
+
+   #### Retina
+
+   > **[Fait]** Le PSD de campagne est une planche **aplatie à ~800 px de large** : la source est donc **~1x**,
+   > il n'y a pas de vraie donnée 2x à l'intérieur (les calques « photo » ne dépassent que de peu le cadre).
+   >
+   > **[Préco] Livrable « format retina » (dimensions ×2)** : ré-échantillonner chaque crop à **2× la largeur
+   > d'affichage** (hero 640→**1280**, cartes 260→**520**), en **conservant le `width` d'affichage** dans le HTML
+   > (`width="640"`, `width="260"`) :
+   > ```bash
+   > magick crop.jpg -filter Lanczos -resize 1280x -quality 88 img_banner.jpg
+   > ```
+   > ⚠️ **NE PAS ajouter `-unsharp`** : le masque de netteté crée un **halo clair sur le pourtour**
+   > (liseré blanc) — c'est du reste pour ça qu'il faut aussi inséter le crop (étape 3). Lanczos seul suffit.
+   > ⚠️ L'upscale ne crée pas de détail : la netteté reste limitée par la source 1x. **Pour un vrai retina,
+   > réclamer les fichiers photos d'origine** (ou les smart objects haute résolution) au studio de création.
 6. **[Préco] Fonds des blocs — attention.** Le beige `#f3eee6` ne s'applique **qu'aux blocs/cartes**
    concernés, **jamais aux titres de section** ni aux espaceurs. Sur les cartes produit (moitié photo /
    moitié texte), mettre `bgcolor="#f3eee6"` **sur la cellule texte uniquement** ; photo et beige
